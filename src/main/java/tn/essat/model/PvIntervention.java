@@ -13,6 +13,10 @@ public class PvIntervention {
 	private Integer id;
 	private Timestamp date_intervention;
 	private String observation;
+	
+	
+	
+	
 	public Integer getId() {
 		return id;
 	}

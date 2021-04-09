@@ -13,44 +13,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import tn.essat.dao.ICompteDao;
+import tn.essat.dao.IUserDao;
+import tn.essat.model.Compte;
+import tn.essat.model.User;
 
-import tn.essat.dao.IMedicamentDao;
-import tn.essat.dao.ITypeDao;
-import tn.essat.model.Medicament;
-import tn.essat.model.Type;
+
+
+
+
 
 @CrossOrigin("*")
 @RestController
 @RequestMapping(path = "/rest")
 public class Rest {
-	
 	@Autowired
-	IMedicamentDao dao;
+	IUserDao dao;
 	@Autowired
-	ITypeDao dao1;
+	ICompteDao dao1;
 	
-	@GetMapping("/all")
-	public List<Medicament> get1(){
+	@GetMapping("/user")
+	public List<User> get1(){
 		return dao.findAll();
-	}
-	@GetMapping("/all1")
-	public List<Type> get12(){
-		return dao1.findAll();
-	}
-	@GetMapping("/detail/{id}")
-	public Optional<Medicament> get11554(@PathVariable("id") int id){
-		return dao.findById(id);
-	}
-	@PostMapping("/addmedicament")
-	public void add(@RequestBody Medicament m) {
 		
-		dao.save(m);
-	}
-	@DeleteMapping("/deletemedicament/{id}")
-	public void get512(@PathVariable("id") int id){
-		dao.deleteById(id);	
 	}
 	
-	
-	
+	@GetMapping("/compte")
+	public List<Compte> get2(){
+		return dao1.findAll();
+		
+	}
 }

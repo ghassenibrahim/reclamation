@@ -3,9 +3,10 @@ package tn.essat.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import tn.essat.model.Medicament;
-import tn.essat.model.Type;
+import tn.essat.model.PvIntervention;
+import tn.essat.model.User;
+
 @Repository
-public interface IMedicamentDao extends JpaRepository<Medicament, Integer> {
+public interface IUserDao extends JpaRepository<User, Integer>{
 
 }
